@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { Router, Route } from "react-router";
+import { history } from "./history";
+import Landingpage from "./components/Landingpage";
+import { IcecreamDetails } from "./components/IcecreamDetails";
+
+const theme = {
+  flexboxgrid: {
+    gridSize: 12,
+    gutterWidth: 1,
+    outerMargin: 2,
+    mediaQuery: "only screen",
+    container: {
+      sm: 46,
+      md: 61,
+      lg: 76
+    },
+    breakpoints: {
+      xs: 0,
+      sm: 48,
+      md: 64,
+      lg: 75
+    }
+  }
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router history={history}>
+        <Route exact path="/" component={Landingpage} />
+        <Route exact path="/:id" component={IcecreamDetails} />
+      </Router>
+    </ThemeProvider>
   );
 }
 
