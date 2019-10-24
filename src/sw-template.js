@@ -61,12 +61,18 @@ if ("function" === typeof importScripts) {
   self.addEventListener("notificationclick", event => {
     const notification = event.notification;
     const action = event.action;
-
-    notification.close();
-    if (action !== "close") {
+    if (action === "close") {
+      notification.close();
+    } else {
       event.waitUntil(
         clients.openWindow("https://pwa-try.jannalynn.now.sh/chocolate")
       );
     }
+  });
+
+  self.addEventListener("notificationclose", event => {
+    const notification = event.notification;
+
+    notification.close();
   });
 }
