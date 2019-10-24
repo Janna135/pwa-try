@@ -4,6 +4,8 @@ import { Router, Route } from "react-router";
 import { history } from "./history";
 import Landingpage from "./components/Landingpage";
 import { IcecreamDetails } from "./components/IcecreamDetails";
+import { Offline } from "react-detect-offline";
+import { OfflineHint } from "./components/OfflineHint";
 
 const theme = {
   flexboxgrid: {
@@ -29,6 +31,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router history={history}>
+        <Offline>
+          <OfflineHint />
+        </Offline>
         <Route exact path="/" component={Landingpage} />
         <Route exact path="/:id" component={IcecreamDetails} />
       </Router>

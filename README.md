@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This is a short project I used to learn about Progressive Web Apps. This is a technology to create a kind of downloadable and offline working version of your website. The user can add a shortcut to his/her desktop and browse your website with the feel of a native app.
 
-In the project directory, you can run:
+## Methods
 
-### `npm start`
+I used create-react-app to create a project but wrote my own service worker instead of using the provided by React. To create it I used workbox which is also used for the provides service worker and comes with many possiblities and additional plugins.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As package manager I used yarn. The basic styling I managed with styled-components. To test the App outside a developing area (ATTENTION: service workers does not work on local environments so use e.g. a http-server) I deployed the project via ZEIT now. Have a look on it: https://pwa-try.jannalynn.now.sh.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Findings
 
-### `npm test`
+To check whether this project works a pwa I used Lighthouse which is provided in the chrome devtools and very handy when doing your first pwa-project and additionally being a junior dev.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Content
 
-### `npm run build`
+- I started with adding a cache for js-, css- and imagefiles.
+- I managed to make the website downloadable for mobile as well as desktop.
+- I added very basic push notifications just to them out.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Topic
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The icecream-topic of this little App is a coincedence. I started in summer so it was a cooling topic. And who knows? Maybe one day I will extend the content of this App and get the #1-address for knowledge about icecream.
