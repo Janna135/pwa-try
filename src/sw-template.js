@@ -2,6 +2,7 @@ if ("function" === typeof importScripts) {
   importScripts(
     "https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js"
   );
+
   /* global workbox */
   if (workbox) {
     console.log("Workbox is loaded");
@@ -35,7 +36,7 @@ if ("function" === typeof importScripts) {
       // with the broadcast channel the cache can be updated without the
       // necessity to close all windows to get the new content
       channel.postMessage({ promptToReload: true });
-      console.log("installed");
+      self.skipWaiting();
     });
   } else {
     console.log("Workbox could not be loaded. No Offline support");
@@ -58,6 +59,7 @@ if ("function" === typeof importScripts) {
     (maxAgeSeconds = 24 * 60 * 60) //save for one Day
   );
 
+  // push notifications
   self.addEventListener("notificationclick", event => {
     const notification = event.notification;
     const action = event.action;
@@ -72,7 +74,6 @@ if ("function" === typeof importScripts) {
 
   self.addEventListener("notificationclose", event => {
     const notification = event.notification;
-
     notification.close();
   });
 }
