@@ -61,6 +61,33 @@
             "controllerchange",
             window.location.reload()
           );
+          if (!("Notification" in window)) {
+            console.log("This browser does not support notifications!");
+          } else {
+            Notification.requestPermission(status => {
+              console.log("Notification permission status:", status);
+            });
+          }
+          if (Notification.permission == "granted") {
+            const options = {
+              body: "Learn more about my favorite: chocolate!",
+              icon: "public/icecream.png",
+              vibrate: [100, 50, 100],
+              data: {
+                dateOfArrival: Date.now()
+              },
+              actions: [
+                { action: "explore", title: "learn more" },
+                { action: "close", title: "close" }
+              ]
+            };
+            navigator.serviceWorker.getRegistration().then(reg => {
+              reg.showNotification(
+                "Welcome to the world of icecream!",
+                options
+              );
+            });
+          }
         };
       });
     }

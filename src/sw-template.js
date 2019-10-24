@@ -57,4 +57,16 @@ if ("function" === typeof importScripts) {
     (maxEntries = 20),
     (maxAgeSeconds = 24 * 60 * 60) //save for one Day
   );
+
+  self.addEventListener("notificationclick", event => {
+    const notification = event.notification;
+    const action = event.action;
+
+    notification.close();
+    if (action !== "close") {
+      event.waitUntil(
+        clients.openWindow("https://pwa-try.jannalynn.now.sh/chocolate")
+      );
+    }
+  });
 }

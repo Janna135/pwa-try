@@ -19,6 +19,7 @@
     "build": "react-scripts build && yarn run build-sw",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "yarn build && now --public --prod",
     "build-sw": "yarn clean-cra-sw && node ./src/sw-build.js",
     "start-sw": "yarn build && http-server ./build"
   },
