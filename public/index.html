@@ -37,6 +37,7 @@
     -->
   </body>
   <script>
+    import firebase from "./src/Firebase";
     const isProduction = "%NODE_ENV%" === "production";
 
     if (isProduction && "serviceWorker" in navigator) {
@@ -62,6 +63,12 @@
             window.location.reload()
           );
         };
+        // register notifications
+        const messaging = firebase.messaging();
+        messaging.usePublicVapidKey(
+          "BKNqbfWHnATBlKOrnRctRTUgCUaPAyQIhMhg_jJj7IZBtjvk9sFHfCSp4Ji43D-Cvi4uqMElAzXyXCIPgriCrdE"
+        );
+
         if (!("Notification" in window)) {
           console.log("This browser does not support notifications!");
         } else {
@@ -85,6 +92,24 @@
             reg.showNotification("Welcome to the world of icecream!", options);
           });
         }
+        // Callback fired if Instance ID token is updated.
+        messaging.onTokenRefresh(() => {
+          messaging
+            .getToken()
+            .then(refreshedToken => {
+              console.log("Token refreshed.");
+              // Indicate that the new Instance ID token has not yet been sent to the
+              // app server.
+              setTokenSentToServer(false);
+              // Send Instance ID token to app server.
+              sendTokenToServer(refreshedToken);
+              // ...
+            })
+            .catch(err => {
+              console.log("Unable to retrieve refreshed token ", err);
+              showToken("Unable to retrieve refreshed token ", err);
+            });
+        });
       });
     }
   </script>

@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^7.2.2",
+    "firebase-admin": "^8.6.1",
     "history": "^4.10.1",
+    "http2": "^3.3.7",
     "react": "^16.8.6",
     "react-detect-offline": "^2.4.0",
     "react-dom": "^16.8.6",
@@ -18,7 +21,6 @@
     "start": "react-scripts start",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
     "build": "react-scripts build && yarn run build-sw",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "yarn build && now --public --prod",
     "build-sw": "yarn clean-cra-sw && node ./src/sw-build.js",

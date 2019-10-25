@@ -6,6 +6,7 @@ import Landingpage from "./components/Landingpage";
 import { IcecreamDetails } from "./components/IcecreamDetails";
 import { Offline } from "react-detect-offline";
 import { OfflineHint } from "./components/OfflineHint";
+import firebase from "./Firebase";
 
 const theme = {
   flexboxgrid: {
