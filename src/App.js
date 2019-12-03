@@ -1,11 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { Router, Route } from "react-router";
-import { history } from "./history";
-import Landingpage from "./components/Landingpage";
-import { IcecreamDetails } from "./components/IcecreamDetails";
 import { Offline } from "react-detect-offline";
 import { OfflineHint } from "./components/OfflineHint";
+import { history } from "./history";
+import { Router, Switch, Route } from "react-router";
+import Landingpage from "./components/Landingpage";
+import { IcecreamDetails } from "./components/IcecreamDetails";
 
 const theme = {
   flexboxgrid: {
@@ -30,12 +30,15 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Offline>
+        <OfflineHint />
+      </Offline>
       <Router history={history}>
-        <Offline>
-          <OfflineHint />
-        </Offline>
-        <Route exact path="/" component={Landingpage} />
-        <Route exact path="/:id" component={IcecreamDetails} />
+        <Switch>
+          <Route exact path="/" component={Landingpage} />
+          <Route exact path="/:id" component={IcecreamDetails} />
+          <Route />
+        </Switch>
       </Router>
     </ThemeProvider>
   );

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row } from "react-styled-flexboxgrid";
-import { icecreams } from "../constants/icecream";
+import icecreams from "../constants/icecream";
 import IcecreamItem from "./icecreamItem";
 
 export default class Landingpage extends Component {

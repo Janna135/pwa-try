@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "history": "^4.10.1",
     "react": "^16.8.6",
     "react-detect-offline": "^2.4.0",
     "react-dom": "^16.8.6",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
+    "react-router-sitemap": "^1.2.0",
     "react-scripts": "3.0.1",
     "react-styled-flexboxgrid": "^3.1.0",
     "styled-components": "^4.2.1",
@@ -22,7 +27,8 @@
     "eject": "react-scripts eject",
     "deploy": "yarn build && now --public --prod",
     "build-sw": "yarn clean-cra-sw && node ./src/sw-build.js",
-    "start-sw": "yarn build && http-server ./build"
+    "start-sw": "yarn build && http-server ./build",
+    "sitemap": "babel-node ./src/sitemap-generator.js"
   },
   "eslintConfig": {
     "extends": "react-app"

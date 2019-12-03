@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { icecreams } from "../constants/icecream";
+import icecreams from "../constants/icecream";
 import { withRouter } from "react-router";
 import { Back } from "../assets/icons";
 import styled from "styled-components";
