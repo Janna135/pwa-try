@@ -25,52 +25,52 @@ export default [
     yummyIndex: 4,
     information:
       "Same as vanilla - there is nothing wrong with a good stracciatella",
-    favoriteOf: ""
+    favoriteOf: "Flo"
   },
   {
     name: "raspberry",
     yummyIndex: 4,
     information:
       "Splited mind - i love raspberry but the icecream often tastes like chemicals...",
-    favoriteOf: ""
+    favoriteOf: "Elena"
   },
   {
     name: "mint",
     yummyIndex: 3,
     information: "with peppermint you are my prince",
-    favoriteOf: ""
+    favoriteOf: "Sean"
   },
   {
-    name: "chocolate mint",
+    name: "chocolate-mint",
     yummyIndex: 4,
     information: "with peppermint you are my prince",
-    favoriteOf: ""
+    favoriteOf: "Armin"
   },
   {
     name: "cookies",
     yummyIndex: 4,
     information: "I looooove cookies",
-    favoriteOf: ""
+    favoriteOf: "Bastian"
   },
   {
     name: "coffee",
     yummyIndex: 2,
     information:
       "Icecream in the morning to wake up seems like a good idea to me",
-    favoriteOf: ""
+    favoriteOf: "Malte S."
   },
   {
     name: "peanut",
     yummyIndex: 5,
     information:
       "You are hungry - get a snickers! Whether with or without the other ingredients - peanuts are always a good choice!",
-    favoriteOf: ""
+    favoriteOf: "Malte N."
   },
   {
     name: "mango",
     yummyIndex: 4,
     information:
       "A little bit of summer in the summer (where you normally eat the most icecream...)",
-    favoriteOf: ""
+    favoriteOf: "Iva"
   }
 ];

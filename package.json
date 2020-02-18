@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
-    "build": "react-scripts build && yarn run build-sw",
+    "build": "react-scripts build && yarn run build-sw && yarn sitemap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "yarn build && now --public --prod",

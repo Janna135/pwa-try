@@ -1,12 +1,16 @@
 ## Introduction
 
-This is a short project I used to learn about Progressive Web Apps. This is a technology to create a kind of downloadable and offline working version of your website. The user can add a shortcut to his/her desktop and browse your website with the feel of a native app.
+Initially this was a short project I used to learn about Progressive Web Apps. This is a technology to create a kind of downloadable and offline working version of your website. The user can add a shortcut to his/her desktop and browse your website with the feel of a native app.
+
+It evolved to a little playground where I test technologies I learn.
 
 ## Methods
 
 I used create-react-app to create a project but wrote my own service worker instead of using the provided by React. To create it I used workbox which is also used for the provides service worker and comes with many possiblities and additional plugins.
 
 As package manager I used yarn. The basic styling I managed with styled-components. To test the App outside a developing area (ATTENTION: service workers does not work on local environments so use e.g. a http-server) I deployed the project via ZEIT now. Have a look on it: https://pwa-try.jannalynn.now.sh.
+
+I added react-router-sitemap to generate a sitemap for the page to improve SEO. This might not be necessary for this state of project but what is a playground for if not playing around with and test some cool stuff?
 
 ## Findings
 
