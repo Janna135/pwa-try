@@ -72,5 +72,12 @@ export default [
     information:
       "A little bit of summer in the summer (where you normally eat the most icecream...)",
     favoriteOf: "Iva"
+  },
+  {
+    name: "passionfruit",
+    yummyIndex: 4,
+    information:
+      "A little bit of summer in the summer (where you normally eat the most icecream...)",
+    favoriteOf: "Anna"
   }
 ];
